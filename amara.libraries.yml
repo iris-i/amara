@@ -1,0 +1,8 @@
+# Base files for the USWDS Framework
+general:
+  version: VERSION
+  css:
+    theme:
+      css/styles.css: {}
+  js:
+    js/scripts.js: {}

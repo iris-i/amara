@@ -1,0 +1,17 @@
+name: Amara
+type: theme
+description: 'A drupal 8 starter theme with Susy & Gulp.'
+core:  8.x
+
+libraries:
+  - 'amara/general'
+
+
+regions:
+  header: 'Header'
+  navigation: 'Navigation'
+  content: 'Main Content'
+  sidebar_first: 'First Sidebar'
+  sidebar_second: 'Second Sidebar'
+  bottom: 'Bottom Region'
+

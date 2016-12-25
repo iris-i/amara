@@ -1,0 +1,10 @@
+backups
+.buildpath
+.project
+.settings
+.idea/*
+html/.idea
+.DS_Store
+.sass-cache
+# Ignore Node modules
+node_modules
