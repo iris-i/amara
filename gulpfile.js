@@ -59,15 +59,6 @@ gulp.task('sass', function() {
     .pipe(gulp.dest(cssDir));
 });
 
-// gulpfile.js
-gulp.task('sass', function() {
-  return gulp.src('scss/*.scss')
-    .pipe(sass({
-      outputStyle: 'compressed',
-      includePaths: ['node_modules/susy/sass']
-    }).on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'));
-});
 
 // Keep an eye on Sass files for changes...
 gulp.task('watch', function () {
