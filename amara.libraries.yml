@@ -10,4 +10,5 @@ general:
 # Add the Milligram CSS framework (https://milligram.github.io).
 milligram:
   css:
-    node_modules/milligram/dist/milligram.min.css: {}
+    theme:
+      node_modules/milligram/dist/milligram.min.css: {}
