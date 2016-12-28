@@ -8,3 +8,5 @@ html/.idea
 .sass-cache
 # Ignore Node modules
 node_modules
+# Ignore compiled CSS
+css/*
