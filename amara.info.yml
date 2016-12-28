@@ -4,6 +4,7 @@ description: 'A drupal 8 starter theme with Susy & Gulp.'
 core:  8.x
 
 libraries:
+  - 'amara/milligram'
   - 'amara/general'
 
 

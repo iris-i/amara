@@ -6,3 +6,8 @@ general:
       css/styles.css: {}
   js:
     js/scripts.js: {}
+
+# Add the Milligram CSS framework (https://milligram.github.io).
+milligram:
+  css:
+    node_modules/milligram/dist/milligram.min.css: {}
