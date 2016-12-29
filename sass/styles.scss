@@ -1,5 +1,5 @@
 @import 'susy';
 
-body {
-
-}
+// Import layout elements first
+@import 'layout/layout';
+@import 'base/base';

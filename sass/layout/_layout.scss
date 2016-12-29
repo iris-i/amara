@@ -1,0 +1,16 @@
+@import 'breakpoint-defaults';
+@import 'breakpoint-variables';
+@import 'susy';
+
+// Set max-width on main page sections
+.wrapper__main--inner,
+.header__inner,
+.menu--main,
+.breadcrumb {
+  @include container(80em center);
+  width: 95%;
+
+  @include breakpoint($xs){
+    width: 90%;
+  }
+}
