@@ -5,7 +5,6 @@ core:  8.x
 base theme: classy
 
 libraries:
-  - 'amara/milligram'
   - 'amara/general'
 
 regions:
