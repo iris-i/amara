@@ -23,6 +23,9 @@ gulp.task('lint-sass', function() {
     .pipe(sassLint({
       rules: {
         // 'class-name-format': 0
+      },
+      files: {
+        ignore: 'sass/**/breakpoint/**.scss'
       }
     }))
     .pipe(sassLint.format())
@@ -45,8 +48,11 @@ gulp.task('sass', function() {
     .pipe(sourcemaps.init())
   // Run Sass
     .pipe(sass({
-      outputStyle: 'compressed',
-      includePaths: ['node_modules/susy/sass']
+      outputStyle: 'expanded',
+      includePaths: [
+        'node_modules/susy/sass', 
+        'node_modules/breakpoint-sass/stylesheets'
+      ]
     }).on('error', sass.logError))
   // Run autoprefixer.
     .pipe(prefix({
@@ -60,12 +66,24 @@ gulp.task('sass', function() {
 });
 
 
-// Keep an eye on Sass files for changes...
-gulp.task('watch', function () {
-  gulp.watch(sassFiles, ['lint-sass', 'sass']);
+// Keep an eye on Sass files for changes and only lint changed files
+gulp.task('watch', function() {
+  gulp.watch(sassFiles, function(ev) {
+    if (ev.type === 'added' || ev.type === 'changed') {
+      lintFile(ev.path);
+    }
+  });
+  // Compile sass changes
+  gulp.watch(sassFiles, ['sass']);
 });
 
-gulp.task('default', ['lint-js', 'watch']);
+function lintFile(file) {
+  gulp.src(file)
+    .pipe(sassLint())
+    .pipe(sassLint.format());
+}
+
+gulp.task('default', ['lint-js', 'sass', 'watch']);
 
 
 
