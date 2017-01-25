@@ -1,12 +1,12 @@
 {
-  "name": "d8-usds",
+  "name": "amara",
   "version": "1.0.0",
-  "description": "A Drupal 8 base theme based on the US Web Design Standards.",
+  "description": "A Drupal 8 base theme with Susy & Milligram.",
   "main": "js/scripts.js",
   "scripts": {
     "postinstall": "find node_modules/ -name '*.info' -type f -delete"
   },
-  "author": "CivicActions",
+  "author": "Iris Ibekwe",
   "license": "ISC",
   "devDependencies": {
     "breakpoint-sass": "^2.7.1",
