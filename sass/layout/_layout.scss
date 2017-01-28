@@ -4,7 +4,6 @@
 // Set max-width on main page sections
 .wrapper__main--inner,
 .header__inner,
-.menu--main,
 .breadcrumb {
   @include container(80em center);
   width: 95%;
@@ -14,14 +13,53 @@
     width: 90%;
   }
 
-  // Flex grid for page layout
-  .wrapper__main--inner {
-    @extend .row;
-
-     main,
-     .layout-sidebar-first,
-     .layout-sidebar-second {
-       @extend .column;
+  // All stacked in Mobile
+  .layout-content,
+  .layout-sidebar-first,
+  .layout-sidebar-second,
+  .col__full {
+       @include span(16);
      }
+
+    // Mobile Queries
+    @include breakpoint($s) {
+      .three-col__sidebar-first,
+      .three-col__sidebar-second {
+        @include span(8);
+      }
+    }
+
+  @include breakpoint($xl) {
+    // 3 columns
+    .three-col__sidebar-second {
+      @include span(4);
+    }
+
+    .three-col__sidebar-first {
+      @include span(isolate 4 at 1);
+    }
+
+    .three-col__content {
+      @include span(isolate 8 at 5);
+    }
+
+    // 2 columns right sidebar
+    .two-col__right-sidebar {
+      @include span(4)
+    }
+
+    .two-col__right-content {
+      @include span(12);
+    }
+
+    // 2 columns left sidebar
+    .two-col__left-sidebar {
+      @include span(isolate 4 at 1);
+    }
+
+    .two-col__left-content {
+      @include span(isolate 12 at 5);
+    }
   }
+
 }
