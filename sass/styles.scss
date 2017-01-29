@@ -1,6 +1,7 @@
 // Import Vendors
 @import 'susy';
-@import '../node_modules/breakpoint-sass/stylesheets/breakpoint';
+@import 'breakpoint';
+@import 'typey';
 
 // Import layout elements first
 @import 'layout/layout';

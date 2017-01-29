@@ -44,24 +44,25 @@ gulp.task('lint-js', function() {
 
 gulp.task('sass', function() {
   return gulp.src(sassFiles)
-  // Initialize sourcemaps
+    // Initialize sourcemaps
     .pipe(sourcemaps.init())
-  // Run Sass
+    // Run Sass
     .pipe(sass({
       outputStyle: 'expanded',
       includePaths: [
-        'node_modules/susy/sass', 
-        'node_modules/breakpoint-sass/stylesheets'
+        'node_modules/susy/sass',
+        'node_modules/breakpoint-sass/stylesheets',
+        'node_modules/typey/stylesheets'
       ]
     }).on('error', sass.logError))
-  // Run autoprefixer.
+    // Run autoprefixer.
     .pipe(prefix({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-  // Write sourcemaps.
+    // Write sourcemaps.
     .pipe(sourcemaps.write())
-  // Write the resulting CSS in the output folder.
+    // Write the resulting CSS in the output folder.
     .pipe(gulp.dest(cssDir));
 });
 
